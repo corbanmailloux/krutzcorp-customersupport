@@ -17,7 +17,8 @@ class Employee:
       Full Name   : name
     """
     _id = None
-    _name = None
+    _first_name = None
+    _last_name = None
 
     def __init__(self, employee_dict):
         """
@@ -26,12 +27,14 @@ class Employee:
         HR either changed or ignored their documents.
         """
         self._id = employee_dict["employee_id"]
-        self._name = employee_dict["fname"] + " " + employee_dict["lname"]
+        self._first_name = employee_dict["fname"]
+        self._last_name = employee_dict["lname"]
 
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name
+            "fname": self._first_name,
+            "lname": self._last_name
         }
 
     # Start read-only properties.
@@ -39,10 +42,18 @@ class Employee:
     @property
     def id(self):
         return self._id
+        
+    @property
+    def first_name(self):
+        return self._first_name
+        
+    @property
+    def last_name(self):
+        return self._last_name
 
     @property
     def name(self):
-        return self._name
+        return self._first_name + " " + self._last_name
 
 
 class Customer:
@@ -99,6 +110,10 @@ class Customer:
     @property
     def last_name(self):
         return self._last_name
+    
+    @property
+    def name(self):
+        return self._first_name + " " + self._last_name
 
     @property
     def email(self):
