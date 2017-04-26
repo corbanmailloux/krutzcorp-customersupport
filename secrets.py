@@ -1,1 +1,2 @@
+PRODUCTION = False
 MYSQL_PASS = ''
