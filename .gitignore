@@ -98,4 +98,3 @@ ENV/
 *.swp
 *.swo
 .vscode/
-secrets.py
