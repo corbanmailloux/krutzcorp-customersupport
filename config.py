@@ -1,8 +1,9 @@
 import os
+import secrets
 
 if('ENV' in os.environ and os.environ['ENV'] == 'production'):
 	print('Using Mysql database')
-	DATABASE_URI = 'mysql+pymysql://customersupport:nAbUfr7juTHay@S=@localhost/customer-support'
+	DATABASE_URI = 'mysql+pymysql://customersupport:'+secrets.MYSQL_PASS+'@localhost/customer-support'
 else:
 	print('Using SQLite database')
 	DATABASE_URI = 'sqlite:///customer-support.db'

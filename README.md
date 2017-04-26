@@ -5,6 +5,8 @@
 1. Install [Python 3.6](https://www.python.org/downloads/)
 2. Install `virtualenv` using `pip`. Open a terminal and run `pip install virtualenv`.
 3. Clone this repo and open a terminal in the repo's folder.
+  - Make a file called `secrets.py`
+  - Fill in mysql pass in `secrets.py` as `MYSQL_PASS='mypassword'`
 4. Create a new virtual environment by running `virtualenv venv`.
 5. To activate the virtual environment, run:
     - OSX/Linux: `source venv/bin/activate`
