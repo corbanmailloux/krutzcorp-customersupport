@@ -1,6 +1,6 @@
 import secrets
 
-if(secrets.MYSQL_PASS):
+if(secrets.MYSQL_PASS != ''):
 	print('Using Mysql database')
 	DATABASE_URI = 'mysql+pymysql://customersupport:'+secrets.MYSQL_PASS+'@localhost/CustomerSupport'
 else:
